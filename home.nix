@@ -26,7 +26,11 @@
     pkgs.nodejs
     pkgs.fish
     pkgs.go
+    pkgs.nixpkgs-fmt
   ];
+
+  home.sessionPath =
+    [ "$HOME/go/bin" ];
 
   programs.fish = {
     enable = true;
