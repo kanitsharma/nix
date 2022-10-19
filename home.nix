@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -27,6 +27,8 @@
     pkgs.fish
     pkgs.go
     pkgs.nixpkgs-fmt
+    pkgs.tmux
+    pkgs.tmuxinator
   ];
 
   home.sessionPath =
@@ -44,6 +46,20 @@
           rev = "00c6cc762427efe08ac0bd0d1b1d12048d3ca727";
           sha256 = "1hrl22dd0aaszdanhvddvqz3aq40jp9zi2zn0v1hjnf7fx4bgpma";
         };
+      }
+    ];
+  };
+
+  programs.tmux = {
+    enable = true;
+    extraConfig = lib.strings.fileContents ./tmux/tmux.conf;
+    plugins = [
+      pkgs.tmuxPlugins.yank
+      pkgs.tmuxPlugins.open
+      pkgs.tmuxPlugins.copycat
+      {
+        plugin = pkgs.tmuxPlugins.power-theme;
+        extraConfig = "set -g @tmux_power_theme '#7DAEA3'";
       }
     ];
   };
