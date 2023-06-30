@@ -14,7 +14,7 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "22.05";
+  home.stateVersion = "22.11";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -25,10 +25,14 @@
   home.packages = [
     pkgs.nodejs
     pkgs.fish
+    pkgs.fishPlugins.hydro
     pkgs.go
     pkgs.nixpkgs-fmt
     pkgs.tmux
     pkgs.tmuxinator
+    pkgs.dotnet-sdk_8
+    pkgs.elixir
+    pkgs.erlang
   ];
 
   home.sessionPath =
