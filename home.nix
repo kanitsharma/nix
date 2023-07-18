@@ -3,8 +3,8 @@
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "kanitsharma";
-  home.homeDirectory = "/Users/kanitsharma";
+  home.username = "kanit";
+  home.homeDirectory = "/home/kanit";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -33,6 +33,14 @@
     pkgs.dotnet-sdk_8
     pkgs.elixir
     pkgs.erlang
+    pkgs.rofi
+    pkgs.neovim
+    pkgs.lazygit
+    pkgs.ripgrep
+    pkgs.nodePackages.pnpm
+    pkgs.cargo
+    pkgs.rustc
+    pkgs.pywal
   ];
 
   home.sessionPath =
