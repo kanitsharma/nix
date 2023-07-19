@@ -62,17 +62,7 @@
     ];
   };
 
-  programs.tmux = {
-    enable = true;
-    extraConfig = lib.strings.fileContents ./tmux/tmux.conf;
-    plugins = [
-      pkgs.tmuxPlugins.yank
-      pkgs.tmuxPlugins.open
-      pkgs.tmuxPlugins.copycat
-      {
-        plugin = pkgs.tmuxPlugins.power-theme;
-        extraConfig = "set -g @tmux_power_theme '#7DAEA3'";
-      }
-    ];
+  home.activation = {
+    tmuxInitialize = "";
   };
 }
